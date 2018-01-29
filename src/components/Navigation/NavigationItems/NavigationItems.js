@@ -4,7 +4,12 @@ import css from './NavigationItems.css';
 
 const navigationItems = (props) => (
     <ul className={css.NavigationItems}>
-        <NavigationItem />
+        <NavigationItem active link="/">
+            Builder
+        </NavigationItem>
+        <NavigationItem active={false} link="/">
+            Checkout
+        </NavigationItem>
     </ul>
 );
 
