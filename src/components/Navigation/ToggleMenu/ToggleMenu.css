@@ -1,0 +1,36 @@
+.Hamburger {
+    width: 35px;
+    height: 25px;
+    display: block;
+    position: relative;
+}
+
+.Hamburger span,
+.Hamburger::before,
+.Hamburger::after {
+    display: block;
+    background-color: white;
+    height: 5px;
+    position: absolute;
+    width: 100%;
+    content: '';
+    border-radius: 9px;
+}
+
+.Hamburger span {
+    top: 10px;
+}
+
+.Hamburger::before {
+    top: 0;
+}
+
+.Hamburger::after {
+    bottom: 0;
+}
+
+@media (min-width: 500px) {
+    .ToggleMenu {
+        display: none;
+    }
+}

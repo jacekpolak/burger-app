@@ -2,10 +2,11 @@ import React from 'react';
 import css from './Toolbar.css';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
+import ToggleMenu from '../ToggleMenu/ToggleMenu';
 
 const toolbar = (props) => (
     <header className={css.Toolbar}>
-        <div>Menu</div>
+        <ToggleMenu clicked={props.open}/>
         <div className={css.Logo}>
             <Logo/>
         </div>
