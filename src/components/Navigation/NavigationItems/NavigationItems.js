@@ -5,10 +5,10 @@ import css from './NavigationItems.css';
 const navigationItems = (props) => (
     <ul className={css.NavigationItems}>
         <NavigationItem link="/">
-            Builder
+            Burger Builder
         </NavigationItem>
-        <NavigationItem link="/checkout">
-            Checkout
+        <NavigationItem link="/orders">
+            Orders
         </NavigationItem>
     </ul>
 );
