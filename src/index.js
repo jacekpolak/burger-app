@@ -22,7 +22,6 @@ const logger = store => {
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(reducer, composeEnhancers(applyMiddleware(logger)));
-// const store = createStore(reducer, applyMiddleware(logger));
 
 const app = (
   <Provider store={store}>
