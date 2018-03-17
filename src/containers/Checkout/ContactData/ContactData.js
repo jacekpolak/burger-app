@@ -3,6 +3,8 @@ import Button from '../../../components/UI/Button/Button';
 import css from './ContactData.css';
 import axiosOrders from '../../../axios-orders'
 import Spinner from '../../../components/UI/Spinner/Spinner';
+import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
+import * as actions from '../../../store/actions/index';
 import { connect } from 'react-redux';
 
 class ContactData extends Component {
@@ -34,14 +36,7 @@ class ContactData extends Component {
       deliveryMethod: 'test method',
     }
 
-    axiosOrders.post('/orders.json', order)
-      .then(response => {
-        this.setState({ loading: false });
-        this.props.history.push('/');
-      })
-      .catch(error => {
-        this.setState({ loading: false });
-      });
+    this.props.onOrderBurger(order);
 
   }
 
@@ -75,4 +70,10 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(ContactData);
+const dispatchToProps = dispatch => {
+  return {
+    onOrderBurger: (orderData) => dispatch(actions.purchaseBurger(orderData))
+  }
+}
+
+export default connect(mapStateToProps, dispatchToProps)(withErrorHandler(ContactData, axiosOrders));
