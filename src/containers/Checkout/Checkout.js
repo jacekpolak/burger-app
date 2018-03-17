@@ -5,7 +5,7 @@ import ContactData from './ContactData/ContactData';
 import { connect } from 'react-redux';
 
 class Checkout extends Component {
-
+   
     onCheckoutCancelledHandler = () => {
         this.props.history.goBack();
     }
@@ -33,8 +33,9 @@ class Checkout extends Component {
 
 const mapStatetoProps = state => {
     return {
-        ings: state.ingredients
+        ings: state.burgerBuilder.ingredients
     }
 }
+
 
 export default connect(mapStatetoProps)(Checkout);
